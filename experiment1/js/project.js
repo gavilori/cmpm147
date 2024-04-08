@@ -1,80 +1,60 @@
-// project.js - purpose and description here
+// musical-ideas.js - a generator for video game soundtrack composition ideas
 // Author: Gyle Viloria
 // Date: April 7, 2024
 
-// NOTE: This is how we might start a basic JavaaScript OOP project
-
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
-
-// define a class
-class MyProjectClass {
-  // constructor function
-  constructor(param1, param2) {
-    // set properties using 'this' keyword
-    this.property1 = param1;
-    this.property2 = param2;
-  }
-
-  // define a method
-  myMethod() {
-    // code to run when method is called
-  }
-}
-
 function main() {
   const fillers = {
-    key: [`A`, `B/C♭`, `B♭`, `C`, `C♯/D♭`, `D`, `E`, `E♭`, `F`, `G`, `F♯/G♭`],
+    key: ["A", "B/C♭", "B♭", "C", "C♯/D♭", "D", "E", "E♭", "F", "G", "F♯/G♭"],
     // more common to get Major/Minor
     mode: ["Major (Ionian)", "Major (Ionian)", "Minor (Aeolian)", "Minor (Aeolian)", "Dorian", "Lydian"],
     
-    titles: [`$title_article_plural $title_pre $title_post_plural`, `$title_article $title_pre $title_post`],
+    titles: ["$title_article_plural $title_pre $title_post_plural", "$title_article $title_pre $title_post"],
     
-    title_article: [``, ``, `The`, `The`, `A(n)`],
-    title_article_plural: [``, ``, ``, `The`, `Such`, `These`, `Those`, `Many`],
+    title_article: ["", "", "The", "The", "A(n)"],
+    title_article_plural: ["", "", "", "The", "Such", "These", "Those", "Many"],
     
-    title_pre: [``, `Forgotten`, `New`, `Old`, `Quiet`, `Curious`, `Great`, `First`, `Second`, `Main`,
-               `Small`, `Final`],
+    title_pre: ["", "Forgotten", "New", "Old", "Quiet", "Curious", "Great", "First", "Second", "Main",
+               "Small", "Final"],
     
-    title_post: [`Tune`, `Melody`, `Lament`, `Dawn`, `Call`, `Duty`, `Way`, `Air`, `Étude`, `Silence`, 
-                 `Path`, `Zone`, `Song`, `Beginning`, `Life`, `Journey`, `Wind`, `Thought`, `Sky`],
-    title_post_plural: [`Wonders`, `Days`, `Duties`, `Ways`, `Paths`, `Wings`, `Voices`,
-                        `Beginnings`, `Winds`, `Thoughts`, `Skies`],
+    title_post: ["Tune", "Melody", "Lament", "Dawn", "Call", "Duty", "Way", "Air", "Étude", "Silence", 
+                 "Path", "Zone", "Song", "Beginning", "Life", "Journey", "Wind", "Thought", "Sky"],
+    title_post_plural: ["Wonders", "Days", "Duties", "Ways", "Paths", "Wings", "Voices",
+                        "Beginnings", "Winds", "Thoughts", "Skies"],
     
     setting: ["A dense forest", "A bustling city", "An abandoned city", "The dark woods", "Outer space", 
              "A friendly town", "The deep ocean", "A medieval castle"],
     
     setting_detail: ["a boss theme", "a battle theme", "a rest area/save point theme", "a shop theme", 
-                    "a chase scene theme", "the main theme for this area", `a suspense theme`,
-                    `a flashback theme`, `a waltz`, `a credits theme`],
+                    "a chase scene theme", "the main theme for this area", "a suspense theme",
+                    "a flashback theme", "a waltz", "a credits theme"],
     
-    musical_detail: [`a key change/modulation`, `a maximum of three instruments`, `a simple, repeating melody`,
-                    `unpitched percussion`, `a type of keys/piano`, `pitched percussion`, `a string quartet`,
-                    `an instrument solo`, `a change in time signature`, `only a few types of chords`, 
-                    `only 8-bit instruments`, ],
+    musical_detail: ["a key change/modulation", "a maximum of three instruments", "a simple, repeating melody",
+                    "unpitched percussion", "a type of keys/piano", "pitched percussion", "a string quartet",
+                    "an instrument solo", "a change in time signature", "only a few types of chords", 
+                    "only 8-bit instruments", ],
     
     // combinations of mood words
-    mood_detail: [`$negative, $negative, and $neutral`, `$positive, $positive, and $neutral`,
-                 `$negative, $positive, and $neutral`, `$neutral and $neutral`, `$positive and $neutral`,
-                 `$negative and $neutral`, `$positive and $negative`, `$positive and $positive`,
-                 `$negative and $negative`],
-    negative: [`sadness`, `loneliness`, `hostility`, `emptiness`, `wariness`, `concern`],
-    positive: [`love`, `hope`, `desire`, `strength`, `courage`, `awe`, `nostalgia`, `care`, `passion`],
-    neutral: [`wandering`, `curiosity`, `mystery`, `inspiration`, `nostalgia`]
+    mood_detail: ["$negative, $negative, and $neutral", "$positive, $positive, and $neutral",
+                 "$negative, $positive, and $neutral", "$neutral and $neutral", "$positive and $neutral",
+                 "$negative and $neutral", "$positive and $negative", "$positive and $positive",
+                 "$negative and $negative"],
+    negative: ["sadness", "loneliness", "hostility", "emptiness", "wariness", "concern"],
+    positive: ["love", "hope", "desire", "strength", "courage", "awe", "nostalgia", "care", "passion"],
+    neutral: ["wandering", "curiosity", "mystery", "inspiration", "nostalgia"]
   };
   
-  const template = `Track Name: $titles
+  const template = `Track Name: $titles  
   
-  Key: $key
+  Key: $key  
   
-  Mode: $mode 
+  Mode: $mode   
   
-  Setting: $setting
+  Setting: $setting  
   
-  Specifics:
-  - make $setting_detail
-  - must contain $musical_detail
-  - may evoke the feelings of $mood_detail
+  Specifics:  
+  - make $setting_detail  
+  - must contain $musical_detail  
+  - may evoke the feelings of $mood_detail  
   `;
   
   
