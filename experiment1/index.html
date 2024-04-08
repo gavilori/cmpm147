@@ -19,13 +19,15 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
     <!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" defer></script>
     <!-- Use me for a JavaScript OOP Project -->
     <script type="text/javascript" src="./js/project.js" defer></script>
     <!-- Use me for a p5.js project -->
-	<!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
+    <!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
   </head>
   <body>
     <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
@@ -34,11 +36,16 @@
         <h1>Experiment 1 - Getting Started</h1>
 
         <div class="minor-section">
-          <div id="canvas-container">
-            <button id="clicker">Reroll!</button>
-            <div id="box"></div>
+          <div class="glitch-wrapper">
+            <div class="glitch-output">
+              <button id="clicker">reroll</button>
+              <div id="box"></div>
+            </div>
           </div>
-		  <p>Translated from <a href="https://glitch.com/~musical-ideas">here</a>.</p>
+          <p>
+            Translated from
+            <a href="https://glitch.com/~musical-ideas">here</a>.
+          </p>
           <!-- <div class="fullscreen-box">
             <button id="fullscreen">Fullscreen</button>
           </div> -->
@@ -46,18 +53,27 @@
 
         <div class="minor-section">
           <h2>Description</h2>
-          <p>[TODO] Create a unique generator on glitch.com and move the working generator to my portfolio page.</p>
+          <p>
+            Create a unique generator on glitch.com and move the working
+            generator to my portfolio page.
+          </p>
         </div>
 
         <div class="minor-section">
           <h2>Technical</h2>
-          <p>[TODO] A grammar is defined with simple replacement tokens. A replacer() function picks a random replacement for any token that appears in the text.</p>
+          <p>
+            A grammar is defined with simple replacement tokens. A replacer()
+            function picks a random replacement for any token that appears in
+            the text.
+          </p>
         </div>
 
         <div class="minor-section">
           <h2>Reflection</h2>
           <p>
-            [TODO]
+            Working on glitch was pretty easy, so most of the thinking went into
+            what types of words to use for the generators. It was really fun,
+            since I mainly took into account something that I would need.
           </p>
         </div>
       </section>
