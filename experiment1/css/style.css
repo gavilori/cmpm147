@@ -1,5 +1,7 @@
 /* style.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 /* Set the canvas element to be the full size of the container */
 canvas {
     width: 100%;
