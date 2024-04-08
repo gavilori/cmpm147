@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap'); */
 
-document, body {
+document,
+body {
   padding: 0;
   margin: 0;
   background-color: beige;
-  font-family: "Inter", sans-serif;
+  font-family: sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin: 0;
   padding: 0;
   /* font-size: 1.2em; */
@@ -25,7 +27,7 @@ h1, h2 {
 .minor-section {
   margin: 10px;
   padding: 10px;
-  border: solid 1px #A0A0A0;
+  border: solid 1px #a0a0a0;
   border-radius: 10px;
 }
 
