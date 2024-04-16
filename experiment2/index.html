@@ -39,23 +39,35 @@
 					<!-- canvas will be added here -->
 				</div>
                 <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
+					<button id="reimagine">Reimagine</button>
+                    <!-- <button id="fullscreen">Fullscreen</button> -->
                 </div>
 			</div>
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>This project seeks to create a generative, living experience of the following image:</p>
+				<div class="image-wrapper">
+					<img src="img/unnamed.png">
+				</div>
+				<a href="https://www.pixoto.com/images-photography/landscapes/sunsets-and-sunrises/green-and-yellow-sunset-4732479201083392">Source</a>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>Relation to inspring image:
+					<ul>
+						<li>Color: The sky, grass, tree, sun, clouds, water, and sand were sampled from the image using the Photoshop eyedropper tool.</li>
+						<li>Primitives: The trees are rendered with `quad` primitives for the trunks, and `triangles` for the leaves. The sun and clouds are both `ellipses`. The water and sky are `rect` primitives. The sky gradient is achieved using `lines`.</li>
+						<li>Polygons: Both the sand and the grass are single randomly polygons using `vertex` calls. The left edge of the grass is a single randomly polygon with `curveVertex` calls.</li>
+						<li>Composition: Different random seed values lead to differently shaped sand and grass. It changes the placement, shape, and number of the trees. It also changes the placement, shape, number, speed, and color of the clouds.</li>
+						<li>Life: The position of clouds is animated over time, and the cursor's Y position affects the sun placement and the sky gradient.</li>
+					</ul></p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>The hardest part about this project was how to design trees and gradients. It was difficult to emulate palm trees with random leaf structures, so I had to change the type of tree. In terms of gradients, it could have been used more widely in this project, but I felt as if it was best kept for the sky since the sun's position can change. Also, make sure you scale everything in relation to a variable, and don't hardcode values!</p>
 			</div>
 
 		</section>

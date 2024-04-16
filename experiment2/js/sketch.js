@@ -5,8 +5,8 @@
 // Here is how you might set up an OOP p5.js project
 // Note that p5.js looks for a file called sketch.js
 
-// Constants - User-servicable parts
-let seed = 0;
+// Globals
+let seed = 255;
 
 const orange = "#d08c2a";
 const mid_green = "#bcca62";
@@ -18,9 +18,6 @@ const cloudA = "#938849";
 const cloudB = "#9f9b52";
 const cloudC = "#b6b042";
 
-// Globals
-
-
 function resizeScreen() {
   centerHorz = canvasContainer.width() / 2; // Adjusted for drawing logic
   centerVert = canvasContainer.height() / 2; // Adjusted for drawing logic
@@ -29,6 +26,10 @@ function resizeScreen() {
   // redrawCanvas(); // Redraw everything based on new size
 }
 
+$("#reimagine").click(function() {
+  seed++;
+});
+
 // setup() function is called once when the program starts
 function setup() {
   // place our canvas, making it fit our container
@@ -36,9 +37,6 @@ function setup() {
   let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
   canvas.parent("canvas-container");
   // resize canvas is the page is resized
-
-  // create an instance of the class
-  myInstance = new MyClass("VALUE1", "VALUE2");
 
   $(window).resize(function() {
     resizeScreen();
@@ -71,16 +69,16 @@ function draw() {
   
   // clouds
   const clouds = [cloudA, cloudB, cloudC]
-  const numClouds = 3 + 10 * random();
+  const numClouds = 3 + 20 * random();
   for (let i = 0; i < numClouds; i++) {
     let cloudFill = color(random(clouds));
     cloudFill.setAlpha(70 + 30 * random());
     fill(cloudFill);
     
     let x = width * random() + (0.05 * random() * millis()) % (width);
-    let y = 60 * random() - 10;
-    let r_x = 500 * random() + 250;
-    let r_y = 20 * random() + 20;
+    let y = (height/4) * random() - 10;
+    let r_x = (width) * random() + width/3;
+    let r_y = (height/15) * random() + 20;
     
     ellipse(x, y, r_x, r_y);
   }
@@ -88,7 +86,7 @@ function draw() {
   
   // sun
   fill(orange);
-  ellipse(width/2, height/2 + 10 + 0.04*yOffset, 75)
+  ellipse(width/2, height/2 + 10 + 0.04*yOffset, height/4)
   
   // water / horizon
   fill(water_color);
@@ -104,7 +102,7 @@ function draw() {
   noiseDetail(4, 0.1)
   for (let x = 0; x < width; x++) {
     let nx = noiseScaleSand * x;
-    let y = height/2 + 20 + noiseLevelSand * noise(nx);
+    let y = height/2 + height/20 + noiseLevelSand * noise(nx);
     vertex(x, y);
   }
   
@@ -127,7 +125,7 @@ function draw() {
   noiseDetail(4, 0.2)
   for (let x = width/2; x < width; x++) {
     let nx = noiseScaleTop * x;
-    let y = 110 + noiseLevelTop * noise(nx);
+    let y = height/2 + noiseLevelTop * noise(nx);
     vertex(x, y);
     
     if (x == width/2) {
@@ -144,8 +142,8 @@ function draw() {
   curveVertex(width/2, height);
   curveVertex(width/2, height);
   
-  curveVertex(width/2 - 20 * random(), 170 + 20 * random());
-  curveVertex(width/2 - 20 * random(), 120 + 10 * random());
+  curveVertex(width/2 - (width/20) * random(), 7*height/8 + (height/10) * random());
+  curveVertex(width/2 - (width/18) * random(), 5*height/8 + (height/10) * random());
   
   curveVertex(width/2, firstY);
   curveVertex(width/2, firstY);
@@ -157,19 +155,19 @@ function draw() {
   fill(tree_color);
   
   let numTrees = 3 * random();
-  const yBottom = 140;
+  const yBottom = height;
   const yTop = 0;
   for (let i = 0; i < numTrees; i++) {
-    let w = 15 + 10 * random();
+    let w = width/50 + 10 * random();
     let x = width/2 + (width/2) * random();
     
     // trunk
     quad(x, yBottom, x, yTop, x + w, yTop, x + w, yBottom);
     
     // leaves
-    let yLeaf1 = 60 + 25 * random();
-    let yLeaf2 = 30 + 15 * random();
-    let yLeaf3 = 5 + 20 * random();
+    let yLeaf1 = height/2 - (height/10) * random();
+    let yLeaf2 = height/3 - (height/10) * random();
+    let yLeaf3 = height/6 - (height/12) * random();
     let dist = -(40 + 30 * random());
     triangle(x-w, yLeaf1, x+w/2, dist, x+2*w, yLeaf1);
     triangle(x-w, yLeaf2, x+w/2, dist, x+2*w, yLeaf2);
